@@ -8,6 +8,7 @@ void Statistics(std::vector<int> &count)
 	std::ofstream fout("C:\\test\\Statistics.txt");
 	int icount;
 	int itemp;
+	int isum = 0;
 	while (i != count.end())
 	{
 		itemp = *i;
@@ -17,9 +18,11 @@ void Statistics(std::vector<int> &count)
 			++icount;
 			++i;
 		}
+		isum += icount;
 		fout << "Number of Signatures that have " << itemp << " Sids:";
 		fout << icount << std::endl;
 	}
+	fout << "Number of Signatures:" << isum << std::endl;
 	fout.close();
 }
 
